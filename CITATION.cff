@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use QLean in your work, please cite it as below."
+title: "QLean: Compiling a Lean 4 Proof Checker into Qwen3.5-4B's Weights"
+authors:
+  - family-names: "Aslanoğlu"
+    given-names: "Göktuğ"
+date-released: 2026-11-24
+license: MIT
+repository-code: "https://github.com/GoktugAslanoglu/QLean"
+url: "https://huggingface.co/SkyAsl/QLean-Qwen3.5-4B"
