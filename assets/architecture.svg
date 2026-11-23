@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" width="1100" height="540">
+  <defs>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#58a6ff"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#3fb950"/>
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#8b949e"/>
+    </marker>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    </style>
+  </defs>
+
+  <!-- Background Card -->
+  <rect x="0" y="0" width="1100" height="540" rx="16" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <text x="40" y="46" class="sans" fill="#f0f6fc" font-size="22" font-weight="700">QLean: In-Weights Formal Verification Architecture</text>
+  <text x="40" y="70" class="sans" fill="#8b949e" font-size="13.5">100% training-free · 738/738 frozen Qwen3.5-4B tensors · 0 external subprocesses (strace verified)</text>
+
+  <!-- Left Box: Stock Qwen3.5-4B -->
+  <rect x="40" y="98" width="380" height="236" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+  <rect x="40" y="98" width="380" height="36" rx="12" fill="#1f2937"/>
+  <rect x="40" y="122" width="380" height="12" fill="#1f2937"/>
+  <text x="58" y="121" class="sans" fill="#58a6ff" font-size="14.5" font-weight="700">Stock Qwen3.5-4B (Frozen)</text>
+
+  <text x="58" y="160" class="mono" fill="#c9d1d9" font-size="12.5">• 738 / 738 original tensors bit-exact</text>
+  <text x="58" y="184" class="mono" fill="#c9d1d9" font-size="12.5">• 2,560-d residual stream untouched</text>
+  <text x="58" y="208" class="mono" fill="#c9d1d9" font-size="12.5">• 18 / 18 bit-exact idle logit parity</text>
+  <text x="58" y="232" class="mono" fill="#c9d1d9" font-size="12.5">• Persistent KV text cache across retries</text>
+
+  <rect x="58" y="256" width="344" height="58" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="72" y="278" class="sans" fill="#8b949e" font-size="11.5" font-weight="600">ROLE</text>
+  <text x="72" y="299" class="sans" fill="#e6edf3" font-size="12.5">Generates Lean 4 proof terms &amp; repairs errors</text>
+
+  <!-- Center Box: Thin Python Transport -->
+  <rect x="462" y="142" width="176" height="148" rx="10" fill="#161b22" stroke="#8b949e" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="550" y="168" text-anchor="middle" class="sans" fill="#f0f6fc" font-size="13" font-weight="700">Python Transport</text>
+  <text x="550" y="190" text-anchor="middle" class="mono" fill="#8b949e" font-size="11">Frame boundaries</text>
+  <text x="550" y="208" text-anchor="middle" class="mono" fill="#8b949e" font-size="11">Token routing</text>
+  <text x="550" y="226" text-anchor="middle" class="mono" fill="#8b949e" font-size="11">Theorem header</text>
+  <text x="550" y="244" text-anchor="middle" class="mono" fill="#8b949e" font-size="11">Generic retry</text>
+  <text x="550" y="272" text-anchor="middle" class="mono" fill="#d29922" font-size="10.5">No external verifier</text>
+
+  <!-- Right Box: Compiled P3 RV32IM Circuit -->
+  <rect x="680" y="98" width="380" height="236" rx="12" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="680" y="98" width="380" height="36" rx="12" fill="#13261b"/>
+  <rect x="680" y="122" width="380" height="12" fill="#13261b"/>
+  <text x="698" y="121" class="sans" fill="#3fb950" font-size="14.5" font-weight="700">Compiled P3 RV32IM Circuit (In-Weights)</text>
+
+  <text x="698" y="160" class="mono" fill="#c9d1d9" font-size="12.5">• Freestanding C Lean 4.36.0-subset kernel</text>
+  <text x="698" y="184" class="mono" fill="#c9d1d9" font-size="12.5">• Executes inside Gated DeltaNet RAM</text>
+  <text x="698" y="208" class="mono" fill="#c9d1d9" font-size="12.5">• 18.6 KiB peak guest RAM (28 KiB cap)</text>
+  <text x="698" y="232" class="mono" fill="#c9d1d9" font-size="12.5">• 0 execve / execveat calls (strace -f)</text>
+
+  <rect x="698" y="256" width="344" height="58" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="712" y="278" class="sans" fill="#8b949e" font-size="11.5" font-weight="600">ROLE</text>
+  <text x="712" y="299" class="sans" fill="#e6edf3" font-size="12.5">Parses, type-checks &amp; emits QLEAN1 diagnostics</text>
+
+  <!-- Arrows between Left, Center, Right -->
+  <line x1="420" y1="184" x2="458" y2="184" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+  <line x1="638" y1="184" x2="676" y2="184" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+  <text x="550" y="132" text-anchor="middle" class="mono" fill="#58a6ff" font-size="11">Framed UTF-8 proof bytes →</text>
+
+  <line x1="680" y1="248" x2="642" y2="248" stroke="#3fb950" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <line x1="462" y1="248" x2="424" y2="248" stroke="#3fb950" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="550" y="308" text-anchor="middle" class="mono" fill="#3fb950" font-size="11">← QLEAN1 verdict into KV cache</text>
+
+  <!-- Bottom Strip: Recorded L4 Self-Repair Loop -->
+  <rect x="40" y="366" width="1020" height="142" rx="12" fill="#161b22" stroke="#30363d" stroke-width="1.2"/>
+  <text x="60" y="392" class="sans" fill="#f0f6fc" font-size="13.5" font-weight="700">Recorded NVIDIA L4 Self-Repair Loop (9.14 GiB Peak VRAM · Zero Theorem-Specific Hints)</text>
+
+  <!-- Step 1 -->
+  <rect x="60" y="408" width="305" height="82" rx="8" fill="#0d1117" stroke="#f85149" stroke-width="1.2"/>
+  <text x="74" y="429" class="mono" fill="#f85149" font-size="12" font-weight="700">1. Attempt 1 → ERR_TYPE_MISMATCH</text>
+  <text x="74" y="449" class="mono" fill="#c9d1d9" font-size="11">expected="function type" got="Prop"</text>
+  <text x="74" y="471" class="mono" fill="#8b949e" font-size="10.5">82,492 trace tokens · 25.3s · 18.3 KiB RAM</text>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="365" y1="449" x2="396" y2="449" stroke="#8b949e" stroke-width="1.8" marker-end="url(#arrow-muted)"/>
+
+  <!-- Step 2 -->
+  <rect x="400" y="408" width="245" height="82" rx="8" fill="#0d1117" stroke="#d29922" stroke-width="1.2"/>
+  <text x="414" y="429" class="mono" fill="#d29922" font-size="12" font-weight="700">2. Same KV Cache Retry</text>
+  <text x="414" y="449" class="mono" fill="#c9d1d9" font-size="11">Diagnostic + generic "Try again."</text>
+  <text x="414" y="471" class="mono" fill="#8b949e" font-size="10.5">No hints · no proof prefill</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="645" y1="449" x2="676" y2="449" stroke="#8b949e" stroke-width="1.8" marker-end="url(#arrow-muted)"/>
+
+  <!-- Step 3 -->
+  <rect x="680" y="408" width="360" height="82" rx="8" fill="#0d1117" stroke="#3fb950" stroke-width="1.2"/>
+  <text x="694" y="429" class="mono" fill="#3fb950" font-size="12" font-weight="700">3. Attempt 2 → QLEAN1 OK</text>
+  <text x="694" y="449" class="mono" fill="#c9d1d9" font-size="11">fun P Q R hPQ hQR hP =&gt; hQR (hPQ hP)</text>
+  <text x="694" y="471" class="mono" fill="#8b949e" font-size="10.5">103,364 tokens · 26.9s · Lean 4.36.0 (0 axioms)</text>
+</svg>
