@@ -1,6 +1,7 @@
 ---
 license: mit
 library_name: transformers
+pipeline_tag: text-generation
 base_model: Qwen/Qwen3.5-4B
 tags:
 - lean4
@@ -32,3 +33,17 @@ The loader executes the repository’s Python code and needs CUDA with BF16 and 
 The guest accepts a strict Lean 4 subset. `benchmarks.json` records the L4 benchmark results, idle parity, and the original checkpoint shard digests.
 
 The L4 run matched all 18 idle-logit comparisons and preserved every stock tensor. In the composition demo, Qwen repaired a real type error on the same text cache after the guest diagnostic and a generic `Try again.` chat turn. Lean 4.36.0 accepted the sampled proof with zero axiom dependencies. The bare-verdict trials did not produce a semantic repair across the three theorem candidates tested.
+
+## Code & Reproducibility
+
+Source code, C kernel, `strace` traces, and Colab reproduction scripts are available on GitHub: [GoktugAslanoglu/QLean](https://github.com/GoktugAslanoglu/QLean).
+
+## Citation
+
+```bibtex
+@misc{aslanoglu2026qlean,
+  author       = {Aslano{\u{g}}lu, G{\"o}ktu{\u{g}}},
+  title        = {{QLean: Compiling a Lean 4 Proof Checker into Qwen3.5-4B's Weights}},
+  year         = {2026},
+  url = {[https://github.com/GoktugAslanoglu/QLean](https://github.com/GoktugAslanoglu/QLean)}
+}
