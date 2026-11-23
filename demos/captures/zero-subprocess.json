@@ -1,0 +1,133 @@
+{
+  "attempts": [
+    {
+      "number": 1,
+      "verdict": "QLEAN1 OK",
+      "source": "theorem qlean_target : ∀ P : Prop, P → P := fun P h => h",
+      "chip_trace_tokens": 42162,
+      "echoed_text_tokens": 13,
+      "wall_seconds": 11.63566244399999,
+      "stream_sha256": "e9850e22f7d711acf193114db41d355415fd35f52f3faf6e02aa027decd10260",
+      "model_tokens": 6,
+      "sampled_proof_span": [
+        0,
+        5
+      ],
+      "guest_echo_ids": [
+        248066,
+        48,
+        43,
+        36,
+        32,
+        45,
+        16,
+        220,
+        46,
+        42,
+        198,
+        248067,
+        198
+      ],
+      "guest_echo_text": "<tool_response>QLEAN1 OK\n</tool_response>\n",
+      "model_echo_ids": [
+        248066,
+        48,
+        43,
+        36,
+        32,
+        45,
+        16,
+        220,
+        46,
+        42,
+        198,
+        248067,
+        198
+      ],
+      "model_echo_text": "<tool_response>QLEAN1 OK\n</tool_response>\n",
+      "guest_peak_stack_bytes": 352,
+      "guest_peak_ram_bytes": 18580
+    }
+  ],
+  "generated_ids": [
+    11555,
+    387,
+    304,
+    574,
+    304,
+    248046
+  ],
+  "protocol_events": [
+    {
+      "after_sampled_tokens": 1,
+      "reason": "open and fill fixed header",
+      "token_ids": [
+        248058,
+        48,
+        44291,
+        16,
+        198,
+        30478,
+        2715,
+        2588,
+        10800,
+        535,
+        52861,
+        387,
+        535,
+        3780,
+        11,
+        387,
+        11069,
+        387,
+        1610,
+        220
+      ],
+      "route": "guest",
+      "text": "<tool_call>QLEAN1\ntheorem qlean_target : ∀ P : Prop, P → P := "
+    },
+    {
+      "after_sampled_tokens": 6,
+      "reason": "close at model end",
+      "token_ids": [
+        248059
+      ],
+      "route": "guest",
+      "text": "</tool_call>"
+    },
+    {
+      "after_sampled_tokens": 6,
+      "reason": "open the guest response role",
+      "token_ids": [
+        248046,
+        198,
+        248045,
+        846,
+        198
+      ],
+      "route": "model",
+      "text": "<|im_end|>\n<|im_start|>user\n"
+    }
+  ],
+  "target": "theorem qlean_target : ∀ P : Prop, P → P :=",
+  "artifact_sha256": "ea9b6eb384e3bd8bee3a35d5df97130c76a2e6b2840ae1fa7962a0db289ece77",
+  "seed": 0,
+  "temperature": 0.0,
+  "prompt": "For this execution-audit fixture, submit the Lean term fun P h => h. Output the bare term on one line, without a theorem header, code fence, or tactics.",
+  "thinking": false,
+  "max_attempts": 3,
+  "max_tokens": 256,
+  "structured": true,
+  "initial_messages": [
+    {
+      "role": "system",
+      "content": "You are proving one fixed theorem in Lean 4 with QLean.\nA candidate is the Lean proof body that follows := in the theorem below. Write only its body.\nAvoid code fences and additional declarations.\nA QLEAN1 error is a request to revise the proof in this same turn.\nDo not use sorry, admit, imports, or other declarations.\nSupported forms include one-line terms, by rfl, by exact TERM, and multiline by\nwith two-space-indented intro/apply/exact/rfl tactics, one per line.\nFor equality transport use @Eq.subst A M a b h ha, where h : a = b and ha : M a.\nIts result has type M b. Use typed parentheses in a motive.\nThe verifier's transport adds framing. Omit tool tags from your answer.\nAttempt budget: 3.\nExact theorem header:\ntheorem qlean_target : ∀ P : Prop, P → P :=\n"
+    },
+    {
+      "role": "user",
+      "content": "For this execution-audit fixture, submit the Lean term fun P h => h. Output the bare term on one line, without a theorem header, code fence, or tactics."
+    }
+  ],
+  "terminal": "<tool_call>QLEAN1\ntheorem qlean_target : ∀ P : Prop, P → P := fun P h => h</tool_call>\n[In-Weights Kernel | 42,162 trace tokens | 11.6s | 18.1 KiB RAM | QLEAN1 OK]\n",
+  "outcome": "verified"
+}

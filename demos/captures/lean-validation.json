@@ -1,0 +1,9 @@
+{
+  "version": "Lean (version 4.36.0, x86_64-unknown-linux-gnu, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "source": "accepted-proof.lean",
+  "compile_exit": 0,
+  "axioms": [],
+  "lean_diagnostics": "accepted-proof.lean:1:72: warning: Variable name `P` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _P\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\naccepted-proof.lean:1:74: warning: Variable name `Q` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _Q\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\naccepted-proof.lean:1:76: warning: Variable name `R` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _R\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\n",
+  "retry": "framed guest verdict, generic Try again. header, and chat role delimiters",
+  "sampled_proof_body": "fun P Q R hPQ hQR hP => hQR (hPQ hP)"
+}

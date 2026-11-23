@@ -1,0 +1,1 @@
+theorem qlean_target : ∀ P Q R : Prop, (P → Q) → (Q → R) → P → R := fun P Q R hPQ hQR hP => hQR (hPQ hP)
