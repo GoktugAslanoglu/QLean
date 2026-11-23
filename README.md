@@ -105,3 +105,16 @@ The `hf/` scaffold prepares an overlay-only release for `SkyAsl/QLean-Qwen3.5-4B
 ## License
 
 QLean source and documentation use the MIT License. The license file includes the Qwenputer copyright notice for adapted portions. The Qwen checkpoint is Apache-2.0. [QLean license](LICENSE) · [Qwenputer license](https://github.com/divagr18/qwenputer/blob/0cab57038a8b218dabe481f994174c3437405e3d/LICENSE) · [Qwen model card](https://huggingface.co/Qwen/Qwen3.5-4B/blob/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/README.md)
+
+## Citation
+
+If you use QLean in your research or build on this work, please cite:
+
+```bibtex
+@software{aslanoglu2026qlean,
+  author       = {Aslano{\u{g}}lu, G{\"o}ktu{\u{g}}},
+  title        = {{QLean: Compiling a Lean 4 Proof Checker into Qwen3.5-4B's Weights}},
+  year         = {2026},
+  month        = {11},
+  url          = {[https://github.com/GoktugAslanoglu/QLean](https://github.com/GoktugAslanoglu/QLean)}
+}
