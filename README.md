@@ -115,5 +115,5 @@ If you use QLean in your research or build on this work, please cite:
   author       = {Aslano{\u{g}}lu, G{\"o}ktu{\u{g}}},
   title        = {{QLean: Compiling a Lean 4 Proof Checker into Qwen3.5-4B's Weights}},
   year         = {2026},
-  url = {\url{https://github.com/GoktugAslanoglu/QLean}}
+  url          = {https://github.com/GoktugAslanoglu/QLean}
 }
