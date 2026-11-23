@@ -1,7 +1,7 @@
 # QLean
 
 **100% training-free. Zero modified learned weights. Bit-exact idle logits. Zero external verifier tools at proof time.**
-
+![QLean Demo](demos/hero.gif)
 QLean adds a compiled RV32IM proof checker to stock Qwen3.5-4B using Qwenputer’s P3 circuit. Guest firmware in the compiled weights parses and checks the submitted Lean 4 source and emits the verdict. A thin Python transport samples and routes tokens, attaches the guest-side theorem header, and displays results. The verdict flows into the same Qwen text cache.
 
 Qwen retains its original 2,560-wide residual stream. The chip has its own deterministic coefficients and firmware state. In Phase 3, both stock checkpoint shards, covering **738 tensors**, retained their SHA-256 digests. All 723 loaded parameter fingerprints matched. All 18 idle logit comparisons and greedy token checks matched stock Qwen. [Phase 3 engineering report](reports/QLean%20Phase%20Three.md)
