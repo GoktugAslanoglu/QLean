@@ -111,10 +111,10 @@ QLean source and documentation use the MIT License. The license file includes th
 If you use QLean in your research or build on this work, please cite:
 
 ```bibtex
-@software{aslanoglu2026qlean,
+@misc{aslanoglu2026qlean,
   author       = {Aslano{\u{g}}lu, G{\"o}ktu{\u{g}}},
   title        = {{QLean: Compiling a Lean 4 Proof Checker into Qwen3.5-4B's Weights}},
   year         = {2026},
   month        = {11},
-  url          = {[https://github.com/GoktugAslanoglu/QLean](https://github.com/GoktugAslanoglu/QLean)}
+  howpublished = {\url{https://github.com/GoktugAslanoglu/QLean}}
 }
