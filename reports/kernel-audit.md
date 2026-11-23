@@ -1,4 +1,4 @@
-# QLean Phase 2 build and audit
+# Kernel Build and Audit
 
 The shared freestanding C checker builds as a native executable and as an RV32IM ELF for Qwenputer P3. The ELF enters at `0x40000`, parks before reading text, and emits a framed `QLEAN1` result before parking again. The host and reference firmware use the same parser, elaborator, and type checker. [Pinned P3 ELF loader](https://github.com/divagr18/qwenputer/blob/0cab57038a8b218dabe481f994174c3437405e3d/experimental/riscv/chipformer/rv/elf.py) [Pinned P3 reference CPU](https://github.com/divagr18/qwenputer/blob/0cab57038a8b218dabe481f994174c3437405e3d/experimental/riscv/chipformer/rv/ref.py)
 
@@ -58,4 +58,4 @@ make -C kernel BUILD="$build" sanitize-run
 
 To check a goal-bound firmware build, create a second build directory and put the single C string literal `"theorem qlean_target : 2 + 2 = 4 :="` in a file called `goal.inc`. Pass its absolute path as the quoted preprocessor macro `QLEAN_GOAL_FILE` via `RV_EXTRA`, then pass the resulting ELF as `--goal-elf` to `scripts/test_rv32.py`.
 
-Phase 3 still requires byte-identical learned tensors, original-width RMSNorm isolation, the hardened circuit capture and its provenance, and actual Triton execution on Colab. Phase 2 leaves the project tree source-only.
+The companion report covers learned tensor identity, original-width RMSNorm isolation, hardened capture, and Triton execution on Colab. [Verification & Weight Isolation](verification-and-weight-isolation.md)

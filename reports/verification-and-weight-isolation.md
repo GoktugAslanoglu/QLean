@@ -1,4 +1,4 @@
-# QLean Phase 3 composition and validation
+# Verification & Weight Isolation
 
 The source implements an additive P3 compilation path and one decode stream with two isolated residual streams. The original Qwen3.5-4B checkpoint remains the reference for every normal text forward pass. The chip's sparse SwiGLU and Gated DeltaNet coefficients, token features, and immutable firmware boot tensors form a separate artifact. The executor loads that artifact before a proof run. A reference CPU supplies the first-park state during compilation. The live decoder routes token IDs and reads circuit-owned output. [Pinned model configuration](https://huggingface.co/Qwen/Qwen3.5-4B/blob/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a/config.json) [P3 Triton executor](https://github.com/divagr18/qwenputer/blob/0cab57038a8b218dabe481f994174c3437405e3d/experimental/riscv/chipformer/rv/tritonexec.py)
 
@@ -70,7 +70,7 @@ This run ended before the verification suite returned results.
 
 ## Verified L4 run
 
-**Phase 3 passed.** The detached run exited 0 on an NVIDIA L4 with 23,034 MiB of total VRAM. Both storage paths had 236 GiB free, so the run kept the checkpoint, cache, firmware, compiled chip, and traces in remote `/tmp/qlean`. The runtime used PyTorch `2.14.1+cu130`, Transformers `5.19.0`, and Triton `3.8.0`. The goal-bound RV32 firmware passed a 3,712-byte linked stack bound against the 4,096-byte reservation.
+The verification suite passed on an NVIDIA L4 with 23,034 MiB of total VRAM. Both storage paths had 236 GiB free, so the run kept the checkpoint, cache, firmware, compiled chip, and traces in remote `/tmp/qlean`. The runtime used PyTorch `2.14.1+cu130`, Transformers `5.19.0`, and Triton `3.8.0`. The goal-bound RV32 firmware passed a 3,712-byte linked stack bound against the 4,096-byte reservation.
 
 - **Immutability.** Both checkpoint shards retained their SHA-256 digests through compilation and verification, covering all 738 checkpoint tensors. All 723 loaded parameters retained their fingerprints.
 - **Residual isolation.** All 18 full-logit comparisons were bit-exact and all greedy token IDs matched. This covered 9 calls on a plain prompt and 9 calls on a chat-template prompt using separate stock and composed caches.
