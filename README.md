@@ -1,6 +1,6 @@
 # QLean
 
-**100% training-free. Zero modified learned weights. Bit-exact idle logits. Zero external verifier tools at proof time.**
+**Training-free, Zero modified learned weights. Bit-exact idle logits. Zero external verifier tools at proof time.**
 
 ![QLean Self-Repair HUD](demos/hero_hud.gif)
 
