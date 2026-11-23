@@ -13,4 +13,4 @@ Hide
 Type "python3 demos/hud_replay.py"
 Enter
 Show
-Sleep 9.5s
+Sleep 11.5s
