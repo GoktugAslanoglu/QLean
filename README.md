@@ -1,7 +1,11 @@
 # QLean
 
 **100% training-free. Zero modified learned weights. Bit-exact idle logits. Zero external verifier tools at proof time.**
-![QLean Demo](demos/hero.gif)
+
+![QLean Self-Repair HUD](demos/hero_hud.gif)
+
+![QLean Architecture](assets/architecture.svg)
+
 QLean adds a compiled RV32IM proof checker to stock Qwen3.5-4B using Qwenputer’s P3 circuit. Guest firmware in the compiled weights parses and checks the submitted Lean 4 source and emits the verdict. A thin Python transport samples and routes tokens, attaches the guest-side theorem header, and displays results. The verdict flows into the same Qwen text cache.
 
 Qwen retains its original 2,560-wide residual stream. The chip has its own deterministic coefficients and firmware state. Both stock checkpoint shards, covering **738 tensors**, retained their SHA-256 digests through compilation and verification. All 723 loaded parameter fingerprints matched. All 18 idle logit comparisons and greedy token checks matched stock Qwen. [Verification & Weight Isolation](reports/verification-and-weight-isolation.md)
@@ -39,6 +43,8 @@ Measured on an NVIDIA L4 with stock Qwen3.5-4B, PyTorch 2.14.1+cu130, and Triton
 Across the nine diagnostic-firmware cases, peak VRAM was 9.136 GiB allocated and 9.258 GiB reserved. Peak guest RAM was 18,580 bytes (18.1 KiB). Natural BPE and byte-token splits of `∀` and `→` produced identical guest input bytes. Two fresh, identical type-mismatch runs produced identical complete trace hashes. [Full benchmark results](demos/captures/phase3-results.json)
 
 ## Demos
+
+![QLean Demo](demos/hero.gif)
 
 The following L4 excerpts omit frame delimiters and elide most of Qwen’s reasoning. Full captures include the prompts, generated token IDs, transport events, and exact guest input.
 
